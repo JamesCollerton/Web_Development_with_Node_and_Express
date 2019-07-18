@@ -2,6 +2,9 @@ var express = require('express');
 
 var app = express();
 
+const indexRouter = require('./routes/index');
+const aboutRouter = require('./routes/about');
+
 // set up handlebars view engine
 var handlebars = require('express3-handlebars')
                     .create({ defaultLayout:'main' });
@@ -12,19 +15,16 @@ app.set('view engine', 'handlebars');
 
 app.set('port', process.env.PORT || 3000);
 
-app.get('/', function(req, res){
-    res.render('home');
-});
-
-app.get('/about', function(req, res){
-    res.render('about');
-});
-
 /*
     Set where we serve static files from
 */
 app.use(express.static(__dirname + '/public'));
 
+/*
+    All routes
+*/
+app.use('/', indexRouter);
+app.use('/about', aboutRouter);
 
 /*
     We can tell the difference between these two custom error handlers by the
