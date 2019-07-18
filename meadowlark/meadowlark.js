@@ -21,6 +21,12 @@ app.get('/about', function(req, res){
 });
 
 /*
+    Set where we serve static files from
+*/
+app.use(express.static(__dirname + '/public'));
+
+
+/*
     We can tell the difference between these two custom error handlers by the
     number of arguments to the function
 */
