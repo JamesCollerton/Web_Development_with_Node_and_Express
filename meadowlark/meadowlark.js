@@ -4,6 +4,8 @@ var app = express();
 
 const indexRouter = require('./routes/index');
 const aboutRouter = require('./routes/about');
+const hoodRiverRouter = require('./routes/hood-river');
+const requestGroupRateRouter = require('./routes/request-group-rate');
 
 const testMiddleware = require('./lib/middleware/test');
 
@@ -32,6 +34,8 @@ app.use(express.static(__dirname + '/public'));
 */
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
+app.use('/tours/hood-river', hoodRiverRouter);
+app.use('/tours/request-group-rate', requestGroupRateRouter);
 
 /*
     We can tell the difference between these two custom error handlers by the
