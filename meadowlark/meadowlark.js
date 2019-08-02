@@ -5,13 +5,13 @@ var app = express();
 const indexRouter = require('./routes/index');
 const aboutRouter = require('./routes/about');
 const hoodRiverRouter = require('./routes/hood-river');
+const oregonCoastRouter = require('./routes/oregon-coast');
 const requestGroupRateRouter = require('./routes/request-group-rate');
 
 const testMiddleware = require('./lib/middleware/test');
 
 // set up handlebars view engine
-var handlebars = require('express3-handlebars')
-                    .create({ defaultLayout:'main' });
+var handlebars = require('express3-handlebars').create({ defaultLayout:'main' });
 
 app.engine('handlebars', handlebars.engine);
 
@@ -35,6 +35,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/tours/hood-river', hoodRiverRouter);
+app.use('/tours/oregon-coast', oregonCoastRouter);
 app.use('/tours/request-group-rate', requestGroupRateRouter);
 
 /*
