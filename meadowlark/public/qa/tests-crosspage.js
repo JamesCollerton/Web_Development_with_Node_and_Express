@@ -1,5 +1,5 @@
-const Browser = require('zombie')
-const assert = require('chai').assert
+const Browser = require('zombie');
+const assert = require('chai').assert;
 
 var browser;
 

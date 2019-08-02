@@ -4,8 +4,9 @@
   "description": "Example Meadowlark Node Application",
   "main": "meadowlark.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha -u tdd -R spec public/qa/tests-unit.js",
     "crosspage-test": "mocha -u tdd -R spec public/qa/tests-crosspage.js",
+    "lint": "jshint meadowlark.js",
     "start": "nodemon meadowlark.js"
   },
   "repository": {
@@ -26,6 +27,10 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "grunt": "^1.0.4",
+    "grunt-cafe-mocha": "^0.1.13",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-exec": "^3.0.0",
     "mocha": "^6.2.0"
   }
 }

@@ -45,14 +45,14 @@ app.use('/tours/request-group-rate', requestGroupRateRouter);
 
 // custom 404 page
 app.use(function(req, res){
-    console.log("Setting up 404 page")
+    console.log("Setting up 404 page");
     res.status(404);
     res.render('404');
 });
 
 // custom 500 page
 app.use(function(err, req, res, next){
-    console.log("Setting up 500 page")
+    console.log("Setting up 500 page");
     console.error(err.stack);
     res.status(500);
     res.render('500');
